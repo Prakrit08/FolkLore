@@ -1,0 +1,326 @@
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, Helvetica, sans-serif;
+}
+ 
+.topnav {
+     overflow: hidden;
+     background: #36454F;
+}
+ 
+.topnav a {
+     float: left;
+     color: #ff0000;
+     background: transparent;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     font-size: 17px;
+}
+ 
+.topnav a:hover {
+     background: transparent;
+     color: black;
+}
+ 
+.topnav a.active {
+     background: transparent;
+     color: rgb(255, 0, 0);
+     font-size: 25px;
+}
+ 
+ 
+ 
+.form-box {
+     background: whitesmoke;
+     width: 400px;
+     min-height: 780px;
+     position: relative;
+     margin: 1% auto;
+     padding: 5px;
+     box-sizing: border-box;
+     box-shadow: 10px 10px 50px #000;
+     overflow: hidden;
+}
+ 
+.button-box {
+     width: 224px;
+     margin: 35px auto;
+     position: relative;
+     box-shadow: 0 0 20px 9px #ff61241f;
+     border-radius: 35px;
+}
+ 
+.toggle-btn {
+     padding: 10px 30px;
+     cursor: pointer;
+     background: transparent;
+     border: 0;
+     outline: none;
+     position: relative;
+}
+ 
+#btn {
+     top: 0;
+     left: 0;
+     position: absolute;
+     width: 112px;
+     height: 100%;
+     background: rgb(240, 66, 66);
+     border-radius: 30px;
+     transition: .5s;
+}
+ 
+.input-group {
+     top: 100px;
+     background-color: transparent;
+     color: rgb(0, 0, 0);
+     position: absolute;
+     width: 280px;
+     transition: .5s;
+}
+ 
+.input-field {
+     width: 100%;
+     padding: 10px 0;
+     color: rgb(0, 0, 0);
+     margin: 5px 0;
+     border-left: 0;
+     border-top: 0;
+     border-right: 0;
+     border-bottom: 1px solid #000;
+     outline: none;
+     background: transparent;
+     font-size: 10px;
+}
+ 
+.submit-btn {
+     width: 75%;
+     padding: 10px 30px;
+     cursor: pointer;
+     display: block;
+     margin: auto;
+     background: rgb(31, 228, 228);
+     border: 0;
+     outline: none;
+     border-radius: 30px;
+}
+ 
+.check-box {
+     margin: 30px 10px 30px 0;
+}
+ 
+span {
+     color: #000;
+     font-size: 12px;
+     bottom: 83px;
+     position: absolute;
+}
+ 
+.f {
+     color: #000;
+     font-size: 12px;
+     bottom: 175px;
+     position: absolute;
+}
+ 
+.t {
+     color: #000;
+     font-size: 12px;
+     bottom: 102px;
+     position: absolute;
+}
+ 
+.s {
+     color: #000;
+     font-size: 12px;
+     bottom: 84px;
+     position: absolute;
+}
+ 
+.p {
+     color: #000;
+     font-size: 12px;
+     bottom: 157px;
+     position: absolute;
+}
+ 
+.span {
+     color: #000;
+     font-size: 12px;
+     bottom: 145px;
+     position: absolute;
+}
+
+.radio {
+     font-size: 12px;
+     bottom: 440px;
+     position: absolute;
+}
+ 
+#provide {
+     left: 50px;
+}
+ 
+#require {
+     left: 450px;
+}
+    </style>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="index.php"><b>FolkLore</b></a>
+    </div>
+    <div style="min-height: 100%;
+     width: 100%;
+     background:url(reg.jpg);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: absolute;">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="provide()"><strong>Artists</strong></button>
+
+                <button type="button" class="toggle-btn" onclick="require()"><strong>Planners</strong></button>
+
+            </div>
+
+            <form id="require" class="input-group" method="post" action='require.php'>
+
+                Name<br>
+                <input type="text" name="name" class="input-field" placeholder="Name" required><br><br>
+                ID<br>
+                <input type="number" class="input-field" name="id" placeholder="ID" required><br><br> Organization Type<br><br>
+                <font size=2>Organizer</font>&nbsp;&nbsp;<input type="radio" name="type" value="Private">&nbsp;&nbsp;&nbsp;&nbsp;
+                <font size=2>Individual</font>&nbsp;&nbsp;<input type="radio" name="type" value="Individual"><br><br>
+                Company Name<br>
+                <input type="text" class="input-field" name="cname" placeholder="Company Name if Private"><br><br> 
+                Phone no
+                <br>
+                <input type="number" name="phone" class="input-field" placeholder="Phone no" required><br><br>
+                <select name="state" class="input-field" placeholder="State" required>
+                    <option value="">Select State</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhatisgarh">Chhatisgarh</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujrat">Gujrat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerela">Kerela</option>
+                    <option value="Lakhshadeep">Lakhshadeep</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttrakhand">Uttrakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                    </select>
+
+                <br><br>
+                <br> Are You Licensed?&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="license" value="Yes"> Yes&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="license" value="No"> No
+                <br><br>
+                <button type="submit" name="subm" class="submit-btn">Register</button>
+
+            </form>
+            <form id="provide" class="input-group" method="post" action='provide.php'>
+
+                Name<br>
+                <input type="text" name="name" class="input-field" placeholder="name"><br><br>
+                Group Name<br><input type="text" class="input-field" name="gname" placeholder="Group Name"><br><br>
+                Aadhar<br><input type="text" class="input-field" name="id" placeholder="Aadhar" required><br><br>
+                Video Link<br><input type="text" class="input-field" name="link" placeholder="Video Link"><br><br>
+                Phone No<br><input type="number" class="input-field" name="phone" class="input-field" placeholder="Phone no" required><br><br>
+                <select name="state" class="input-field" placeholder="state" required>
+                        <option value="">Select State</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chhatisgarh">Chhatisgarh</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujrat">Gujrat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerela">Kerela</option>
+                        <option value="Lakhshadeep">Lakhshadeep</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttrakhand">Uttrakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        </select>
+
+                <br><br>
+                <button type="submit" name="sub" class="submit-btn">Register</button>
+
+            </form>
+
+
+        </div>
+
+    </div>
+    <script>
+        var x = document.getElementById("provide");
+        var y = document.getElementById("require");
+        var z = document.getElementById("btn");
+
+        function require() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function provide() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+    </script>
+</body>
+
+</html>
